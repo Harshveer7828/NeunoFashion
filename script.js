@@ -325,11 +325,40 @@ function page8() {
         })
     })
 }
-sidebar()
-page1()
-page2()
-page3()
-page4()
-page5()
-page6()
-page8()
+
+function menucloseButtonres(){
+    let closeButton=document.querySelector("#sidebar .ri-close-fill");
+    let menuButton=document.querySelector(".menu");
+    menuButton.addEventListener("click",function(){
+        gsap.to("#sidebar",{
+            left:0
+        })
+    })
+    closeButton.addEventListener("click",function(){
+        gsap.to("#sidebar",{
+            left:"100vw"
+        })
+    })
+
+}
+
+if(window.innerWidth<=600){
+    // sidebar()
+    // page1()
+    page2()
+    page3()
+    page4()
+    page8()
+    menucloseButtonres()
+}
+else{
+    sidebar()
+    page1()
+    page2()
+    page3()
+    page4()
+    page5()
+    page6()
+    page8()
+}
+
